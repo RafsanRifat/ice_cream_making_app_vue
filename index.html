@@ -7,7 +7,7 @@
             name="viewport"
             content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
-    <link rel="shortcut icon" href="images/logo.svg"/>
+    <link rel="shortcut icon" v-bind:href="logo"/>
     <title>Ice Cream Sundae</title>
     <link rel="stylesheet" href="styles.css"/>
     <script src="https://unpkg.com/vue@3"></script>
@@ -22,8 +22,8 @@
                 <img class="logo" src="images/logo.svg" alt="Logo"/>
             </div>
             <div class="textRight">
-                <img src="images/react.svg" alt="React" class="reactLogo"/><strong
-            >React</strong
+                <img v-bind:src="vueLogo" alt="Vue" class="reactLogo"/><strong
+            >Vue</strong
             >
             </div>
         </div>
@@ -45,7 +45,8 @@
                     <div class="scoop chocolate"></div>
                     <div class="scoop vanilla react" id="scoop"></div>
                     <div class="scoop lemon"></div>
-                    <div class="cherry"></div>
+                    <div v-if="cart.length > 0" class="cherry"></div>
+                    <div v-else class="question"></div>
                 </div>
             </div>
             <!-- ice cream end -->
