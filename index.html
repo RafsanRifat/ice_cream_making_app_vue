@@ -59,8 +59,8 @@
                     <div class="react" id="items">
                         <ul>
                             <!-- item start -->
-                            <li class="react item" id="item">
-                                <span> {{ variant }} </span>
+                            <li v-for="variant in variants" :key="variant.id" class="react item" >
+                                <span> {{ variant.name }} </span>
                                 <span class="quantity">2</span>
                                 <div class="right">
                                     <button type="button" class="plus rounded">+</button>
@@ -68,30 +68,6 @@
                                 </div>
                             </li>
                             <!-- item end -->
-
-                            <li class="item">
-                                <span>Chocolate</span>
-                                <div class="right">
-                                    <button type="button" class="plus rounded">+</button>
-                                    <button type="button" class="minus rounded">-</button>
-                                </div>
-                            </li>
-
-                            <li class="item">
-                                <span>Strawberry</span>
-                                <div class="right">
-                                    <button type="button" class="plus rounded">+</button>
-                                    <button type="button" class="minus rounded">-</button>
-                                </div>
-                            </li>
-
-                            <li class="item">
-                                <span>Orange</span>
-                                <div class="right">
-                                    <button type="button" class="plus rounded">+</button>
-                                    <button type="button" class="minus rounded">-</button>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                     <!-- items end -->
