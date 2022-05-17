@@ -63,7 +63,7 @@
                                 <span> {{ variant.name }} </span>
                                 <span class="quantity">2</span>
                                 <div class="right">
-                                    <button type="button" class="plus rounded">+</button>
+                                    <button v-on:click="addToCart(variant.id)" type="button" class="plus rounded">+</button>
                                     <button type="button" class="minus rounded">-</button>
                                 </div>
                             </li>

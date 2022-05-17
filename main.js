@@ -11,7 +11,20 @@ const app = Vue.createApp({
                 {id: 3, name: 'Strawberry', price: 140},
                 {id: 4, name: 'Orange', price: 100},
                 {id: 1, name: 'Lemon', price: 50}
-            ]
+            ],
+            cart: []
+        }
+    },
+    methods: {
+        addToCart(varisntId){
+            console.log(varisntId);
+
+            // data = this.variants.find(variant => variant.id === varisntId);
+           data = this.variants.find(function (variant){
+               return variant.id === varisntId
+           })
+
+            console.log(data)
         }
     }
 });
