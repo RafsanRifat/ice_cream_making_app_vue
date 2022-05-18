@@ -59,12 +59,13 @@
                     <div class="react" id="items">
                         <ul>
                             <!-- item start -->
-                            <li v-for="variant in variants" :key="variant.id" class="react item" >
+                            <li v-for="variant in variants" :key="variant.id" class="react item">
                                 <span> {{ variant.name }} </span>
                                 <span class="quantity">2</span>
                                 <div class="right">
-                                    <button v-on:click="addToCart(variant.id)" type="button" class="plus rounded">+</button>
-                                    <button type="button" class="minus rounded">-</button>
+                                    <button @click="addToCart(variant.id)" type="button" class="plus rounded">+</button>
+                                    <button @click="removeFromCart(variant.id)" type="button" class="minus rounded">-
+                                    </button>
                                 </div>
                             </li>
                             <!-- item end -->
@@ -151,7 +152,7 @@
 
 <script src="main.js"></script>
 <script>
-const mountedapp = app.mount('#layout');
+    const mountedapp = app.mount('#layout');
 </script>
 </body>
 </html>

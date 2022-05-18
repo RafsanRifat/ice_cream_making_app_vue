@@ -16,15 +16,21 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        addToCart(varisntId){
-            console.log(varisntId);
+        addToCart(varisntId) {
+            // console.log(varisntId);
 
-            // data = this.variants.find(variant => variant.id === varisntId);
-           data = this.variants.find(function (variant){
-               return variant.id === varisntId
-           })
-
-            console.log(data)
+            // cart this.variants.find(variant => variant.id === varisntId);
+            data = this.variants.find(function (variant) {
+                return variant.id === varisntId
+            })
+            cartItem = this.cart.push(data)
+            console.log(this.cart.length)
+        },
+        removeFromCart(variantId) {
+            let position = this.cart.findIndex(variant => variant.id === variantId)
+            console.log(variantId)
+            console.log(position)
+            this.cart.splice(position)
         }
     }
 });
