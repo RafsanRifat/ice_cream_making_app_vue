@@ -10,7 +10,7 @@ const app = Vue.createApp({
                 {id: 2, name: 'Chocolate', price: 150},
                 {id: 3, name: 'Strawberry', price: 140},
                 {id: 4, name: 'Orange', price: 100},
-                {id: 1, name: 'Lemon', price: 50}
+                {id: 5, name: 'Lemon', price: 50}
             ],
             cart: []
         }
@@ -31,6 +31,13 @@ const app = Vue.createApp({
             console.log(variantId)
             console.log(position)
             this.cart.splice(position, 1)
+        }
+    },
+    computed: {
+        total(){
+            return this.cart.reduce(function (initialValue, presentObject){
+               return total =  initialValue + presentObject.price
+            }, 0);
         }
     }
 });

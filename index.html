@@ -48,14 +48,15 @@
             <!-- builder start -->
             <div class="react" id="builder">
                 <div class="builder">
-                    <h3>Build your own Ice Cream Sundae <span>(<span :style="cart.length === 0 ? {color: 'red'} : {}">{{cart.length}}</span>)</span></h3>
+                    <h3>Build your own Ice Cream Sundae <span>(<span
+                            :style="cart.length === 0 ? {color: 'red'} : {}">{{cart.length}}</span>)</span></h3>
                     <!-- items start -->
                     <div class="react" id="items">
                         <ul>
                             <!-- item start -->
                             <li v-for="variant in variants" :key="variant.id" class="react item">
                                 <span> {{ variant.name }} </span>
-                                <span class="quantity">{{ variant.counts }}</span>
+                                <span class="quantity">{{ cart.filter((obj) => obj.id === variant.id).length }}</span>
                                 <div class="right">
                                     <button @click="addToCart(variant.id)" type="button" class="plus rounded">+</button>
                                     <button @click="removeFromCart(variant.id)" type="button" class="minus rounded">-
@@ -70,7 +71,7 @@
                     <!-- total price start -->
                     <div class="total react" id="total">
                         <div>Total Price</div>
-                        <div>3000.00 Tk</div>
+                        <div>{{ total }} Tk</div>
                     </div>
                     <!-- total price end -->
                     <button type="button" onclick="next()" class="order rounded">
