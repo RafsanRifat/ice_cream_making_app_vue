@@ -4,7 +4,7 @@ const app = Vue.createApp({
             variant: 'vanilla',
             logo: 'images/logo.svg',
             vueLogo: 'images/vueLogo.svg',
-            cart: ['vanilla', 'orange', 'chocolate'],
+            // cart: ['vanilla', 'orange', 'chocolate'],
             variants: [
                 {id: 1, name: 'Vanilla', price: 200},
                 {id: 2, name: 'Chocolate', price: 150},
@@ -30,7 +30,7 @@ const app = Vue.createApp({
             let position = this.cart.findIndex(variant => variant.id === variantId)
             console.log(variantId)
             console.log(position)
-            this.cart.splice(position)
+            this.cart.splice(position, 1)
         }
     }
 });
