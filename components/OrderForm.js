@@ -80,6 +80,8 @@ app.component('order-form', {
                 address:  this.address
             }
             console.log(orderDetails)
+            this.hideOrderForm()
+            this.$emit('clear-cart')
         }
     }
 })

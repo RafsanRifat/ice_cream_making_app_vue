@@ -35,6 +35,9 @@ const app = Vue.createApp({
         },
         toggleModal(){
             this.showModal = !this.showModal
+        },
+        clearCart(){
+            this.cart = []
         }
     },
     computed: {
