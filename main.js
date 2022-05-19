@@ -12,7 +12,8 @@ const app = Vue.createApp({
                 {id: 4, name: 'Orange', price: 100},
                 {id: 5, name: 'Lemon', price: 50}
             ],
-            cart: []
+            cart: [],
+            showModal: false
         }
     },
     methods: {
@@ -31,6 +32,9 @@ const app = Vue.createApp({
             console.log(variantId)
             console.log(position)
             this.cart.splice(position, 1)
+        },
+        toggleModal(){
+            this.showModal = !this.showModal
         }
     },
     computed: {

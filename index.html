@@ -66,13 +66,13 @@
                         <div>{{ total }} Tk</div>
                     </div>
                     <!-- total price end -->
-                    <button type="button" onclick="next()" class="order rounded">
-                        Add to Cart
+                    <button type="button"  class="order rounded" @click="toggleModal">
+                        Proceed
                     </button>
                 </div>
 
                 <!-- modal start -->
-                <order-form></order-form>
+                <order-form :cart="cart" v-if="showModal " @toggle-order-form="toggleModal"></order-form>
                 <!-- modal end -->
             </div>
             <!-- builder end -->

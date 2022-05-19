@@ -6,7 +6,7 @@ app.component('order-form', {
         },
     },
     template: `   <div class="react" id="modal">
-                        <div class="backdrop" onclick="removeModal()"></div>
+                        <div class="backdrop" @click="hideOrderForm"></div>
                         <div class="modalBody">
                             <div class="formContainer react" id="orderForm">
                                 <h1>Complete the form below and hit submit</h1>
@@ -48,5 +48,10 @@ app.component('order-form', {
                                 </form>
                             </div>
                         </div>
-                </div>`
+                </div>`,
+    methods: {
+        hideOrderForm(){
+            this.$emit('toggle-order-form');
+        }
+    }
 })
