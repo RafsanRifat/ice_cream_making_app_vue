@@ -25,7 +25,7 @@ const app = Vue.createApp({
                 return variant.id === varisntId
             })
             cartItem = this.cart.push(data)
-            console.log(this.cart.length)
+            // console.log(this.cart.length)
         },
         removeFromCart(variantId) {
             let position = this.cart.findIndex(variant => variant.id === variantId)
